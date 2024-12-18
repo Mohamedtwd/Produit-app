@@ -1,7 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\ProductsController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::apiResource('clients', ClientController::class);
+Route::apiResource('categories', CategoriesController::class);
+Route::apiResource('products', ProductsController::class);
+Route::apiResource('orders', OrdersController::class);
